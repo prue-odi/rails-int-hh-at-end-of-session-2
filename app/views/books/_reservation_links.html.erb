@@ -1,0 +1,6 @@
+<% if reservation %>
+<% if user = current_user_id
+  <%= link_to "Free", free_book_reservation_path(book, reservation), method: :put, class: 'btn' %>
+<% else %>
+  <%= link_to "Reserve", create_book_reservation_path(book), class: 'btn', remote: true %>
+<% end %>
